@@ -140,6 +140,9 @@ for (const estado in faturamentoEstados) {
 
 // Exibe o faturamento total e a porcentagem de cada estado
 console.log("Faturamento Total Mensal: R$", faturamentoTotal.toFixed(2));
+
+/////////////////////////
+
 for (const estado in porcentagensEstados) {
   console.log(`Porcentagem do faturamento de ${estado}: ${porcentagensEstados[estado]}`);
 }
