@@ -51,3 +51,31 @@ const resultado = isFibonacci(21); // pertence a sequência de Fibonacci
 console.log(resultado);
 
 //////////
+
+const faturamentoDiario = [
+  1200, 1800, 100, 3000, 2600, 6430, 3100, 321, 3200, 4000, 9014, 4500, 843, 4800, 6000,
+  5000, 250, 6000, 7000, 4567, 7500, 8000, 9040, 9000, 9500, 1520, 10000, 1648, 11000
+];
+
+const faturamentoComUmZero = faturamentoDiario.filter((valor, index, array) => 
+  valor === 0 ? array.indexOf(0) === index : true
+);
+
+// Filtra valores positivos para análise
+const valoresFiltrados = faturamentoComUmZero.filter(valor => valor > 0);
+
+// Calcula soma e média mensal dos valores filtrados
+const somaFaturamento = valoresFiltrados.reduce((acc, valor) => acc + valor, 0);
+const mediaMensal = somaFaturamento / valoresFiltrados.length;
+
+// Calcula o menor e maior faturamento
+const menorFaturamento = Math.min(...faturamentoComUmZero);
+const maiorFaturamento = Math.max(...faturamentoComUmZero);
+
+// Calcula o número de dias com faturamento acima da média mensal
+const diasAcimaDaMedia = faturamentoComUmZero.reduce((acc, valor) => valor > mediaMensal ? acc + 1 : acc, 0);
+
+console.log("Menor faturamento do mês: R$", menorFaturamento);
+console.log("Maior faturamento do mês: R$", maiorFaturamento);
+console.log("Número de dias com faturamento acima da média mensal:", diasAcimaDaMedia);
+
