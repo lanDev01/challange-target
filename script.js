@@ -144,3 +144,15 @@ for (const estado in porcentagensEstados) {
   console.log(`Porcentagem do faturamento de ${estado}: ${porcentagensEstados[estado]}`);
 }
 
+function inverterString(str) {
+  let resultado = '';
+  
+  for (let i = str.length - 1; i >= 0; i--) {
+    resultado += str[i];
+  }
+  
+  return resultado;
+}
+
+const entrada = "String";
+console.log(inverterString(entrada)); // "gnirtS"
